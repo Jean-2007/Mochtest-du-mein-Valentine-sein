@@ -8,8 +8,8 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffebee, #fff0f5);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #ffebee, #fff0f5, #f8e1e9);
       color: #333;
       min-height: 100vh;
       text-align: center;
@@ -17,19 +17,19 @@
       position: relative;
     }
     .overlay { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1; }
-    .falling { position: absolute; font-size: 2.5em; animation: cascade 10s linear infinite; pointer-events:none; }
+    .falling { position: absolute; font-size: 2.8em; animation: cascade 11s linear infinite; pointer-events:none; }
     @keyframes cascade {
-      0% { transform: translateY(-30vh) rotate(0deg); opacity:1; }
-      100% { transform: translateY(130vh) rotate(720deg); opacity:0; }
+      0% { transform: translateY(-40vh) rotate(0deg); opacity:1; }
+      100% { transform: translateY(140vh) rotate(900deg); opacity:0; }
     }
-    .container { position: relative; z-index:10; padding: 50px 20px; max-width: 800px; margin:0 auto; }
-    h1 { font-size: 3.2em; color: #e91e63; margin: 30px 0; }
-    p { font-size: 1.5em; line-height: 1.6; margin: 20px 0; }
-    .buttons { margin: 50px 0; }
-    button { padding: 18px 50px; font-size: 1.6em; border:none; border-radius:50px; cursor:pointer; margin:20px; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+    .container { position: relative; z-index:10; padding: 60px 20px; max-width: 800px; margin:0 auto; }
+    h1 { font-size: 3.5em; color: #e91e63; margin: 40px 0 20px; }
+    p { font-size: 1.6em; line-height: 1.7; margin: 25px 0; }
+    .buttons { margin: 60px 0; }
+    button { padding: 20px 60px; font-size: 1.8em; border:none; border-radius:60px; cursor:pointer; margin:25px; box-shadow:0 8px 20px rgba(0,0,0,0.15); transition:all 0.3s; }
     #yesBtn { background:#4caf50; color:white; }
+    #yesBtn:hover { transform:scale(1.1); }
     #noBtn { background:#f44336; color:white; }
-    img { max-width:220px; margin:20px; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
   </style>
 </head>
 <body>
@@ -39,17 +39,14 @@
   <div class="container">
     <h1>Hallo [ihr Name]! 😊</h1>
     
-    <p>Hace mucho tiempo que no hablamos... Me acordé de ti y pensé que estaría bueno ponernos al día. 😄</p>
+    <p>Es ist schon eine Weile her, seit wir das letzte Mal richtig geredet haben... 😅<br>
+    Mir ist plötzlich eingefallen, wie nett es immer war, mit dir zu chatten.</p>
     
-    <p>Ya que se acerca el 14... ¿te animarías a tomar un café o algo relajado ese día? ☕🐱<br>
-    Sin presión, solo una idea para charlar un rato y ver qué tal.</p>
-
-    <!-- Animalitos estáticos opcionales -->
-    <img src="welpe.png" alt="Süßer Welpe">
-    <img src="katze.png" alt="Niedliche Katze">
+    <p>Da bald Valentinstag ist, dachte ich: Vielleicht hätten wir Lust, mal einen Kaffee zusammen zu trinken oder einfach entspannt spazieren zu gehen? ☕🐱<br>
+    Ganz ohne Druck – einfach nur quatschen und sehen, was passiert.</p>
 
     <div class="buttons">
-      <button id="yesBtn">Ja, klingt gut! 😄</button>
+      <button id="yesBtn">Ja, klingt super! 😄</button>
       <button id="noBtn">Nein, danke 😅</button>
     </div>
   </div>
@@ -59,24 +56,33 @@
     const noBtn = document.getElementById('noBtn');
     const fallingContainer = document.getElementById('fallingContainer');
 
-    const items = ['🐶', '🐱', '🐦', '❤️', '💕', '🐾', '😻'];
+    const items = ['🐶', '🐱', '🐦', '❤️', '💕', '🐾', '😻', '🦋', '🐰'];
 
     function createFalling() {
       const item = document.createElement('div');
       item.classList.add('falling');
       item.textContent = items[Math.floor(Math.random() * items.length)];
       item.style.left = Math.random() * 100 + 'vw';
-      const duration = Math.random() * 6 + 8;
+      const duration = Math.random() * 7 + 8; // 8-15s
       item.style.animationDuration = duration + 's';
-      item.style.animationDelay = Math.random() * 3 + 's';
-      item.style.fontSize = (Math.random() * 1.5 + 1.8) + 'em';
+      item.style.animationDelay = Math.random() * 4 + 's';
+      item.style.fontSize = (Math.random() * 2 + 2) + 'em';
       fallingContainer.appendChild(item);
-      setTimeout(() => item.remove(), (duration + 1) * 1000);
+      setTimeout(() => item.remove(), (duration + 2) * 1000);
     }
 
-    setInterval(createFalling, 400);
-    for (let i = 0; i < 30; i++) createFalling();
+    // Cascada continua
+    setInterval(createFalling, 350);
+    for (let i = 0; i < 35; i++) createFalling();
 
     yesBtn.addEventListener('click', () => {
-      alert('Super! 😊 Te escribo para coordinar. ¿Cuándo te viene bien?');
-      // Opcional: window.location.href = 'https://wa.me/TUNUMERO?text=Hey%2C%20ja%20zu%20dem%20Kaffee!%20%F0%9F%98%84
+      alert('Cool! 😊 Ich schreibe dir gleich, um was auszumachen. Wann passt es dir?');
+      // Opcional: abre WhatsApp → window.location.href = 'https://wa.me/TUNUMERO?text=Hey%2C%20ja%20zum%20Kaffee!%20%F0%9F%98%84';
+    });
+
+    noBtn.addEventListener('click', () => {
+      alert('Kein Ding 😅 Viel Spaß am Valentinstag trotzdem!');
+    });
+  </script>
+</body>
+</html>
