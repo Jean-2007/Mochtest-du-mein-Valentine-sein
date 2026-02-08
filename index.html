@@ -3,98 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Möchtest du mein Valentine sein? 💕</title>
+  <title>Hey [ihr Name], Lust auf einen Kaffee? ☕🐶</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffebee, #fff0f5, #f8e1e9);
-      color: #4a4a4a;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffebee, #fff0f5);
+      color: #333;
       min-height: 100vh;
       text-align: center;
       overflow: hidden;
       position: relative;
     }
-    .overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .falling {
-      position: absolute;
-      font-size: 2.8em;
-      animation: cascade 12s linear infinite;
-      pointer-events: none;
-      user-select: none;
-    }
+    .overlay { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1; }
+    .falling { position: absolute; font-size: 2.5em; animation: cascade 10s linear infinite; pointer-events:none; }
     @keyframes cascade {
-      0% {
-        transform: translateY(-30vh) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(130vh) rotate(1080deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(-30vh) rotate(0deg); opacity:1; }
+      100% { transform: translateY(130vh) rotate(720deg); opacity:0; }
     }
-    .container {
-      position: relative;
-      z-index: 10;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 3.8em;
-      color: #e91e63;
-      margin: 30px 0 15px;
-      text-shadow: 0 2px 10px rgba(233,30,99,0.3);
-    }
-    p {
-      font-size: 1.5em;
-      line-height: 1.7;
-      margin: 15px 0;
-    }
-    .buttons {
-      margin: 60px 0;
-    }
-    button {
-      padding: 20px 60px;
-      font-size: 1.8em;
-      border: none;
-      border-radius: 60px;
-      cursor: pointer;
-      margin: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: all 0.3s;
-    }
-    #yesBtn {
-      background: #4caf50;
-      color: white;
-    }
-    #yesBtn:hover { transform: scale(1.15); }
-    #noBtn {
-      background: #f44336;
-      color: white;
-      position: relative;
-    }
-    .carta {
-      display: none;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 50px;
-      border-radius: 30px;
-      margin: 40px auto;
-      max-width: 800px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    }
-    .animal-static {
-      max-width: 240px;
-      margin: 20px;
-      border-radius: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
+    .container { position: relative; z-index:10; padding: 50px 20px; max-width: 800px; margin:0 auto; }
+    h1 { font-size: 3.2em; color: #e91e63; margin: 30px 0; }
+    p { font-size: 1.5em; line-height: 1.6; margin: 20px 0; }
+    .buttons { margin: 50px 0; }
+    button { padding: 18px 50px; font-size: 1.6em; border:none; border-radius:50px; cursor:pointer; margin:20px; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+    #yesBtn { background:#4caf50; color:white; }
+    #noBtn { background:#f44336; color:white; }
+    img { max-width:220px; margin:20px; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
   </style>
 </head>
 <body>
@@ -102,104 +37,46 @@
   <div class="overlay" id="fallingContainer"></div>
 
   <div class="container">
-    <h1>Hallo [ihr Name]! 💌</h1>
+    <h1>Hallo [ihr Name]! 😊</h1>
     
-    <p>Ich musste dir endlich etwas sagen... 😳<br>
-    Du bringst mich zum Lächeln, ohne dass ich weiß warum. Jede Nachricht von dir macht mich nervös und glücklich zugleich.</p>
+    <p>Hace mucho tiempo que no hablamos... Me acordé de ti y pensé que estaría bueno ponernos al día. 😄</p>
+    
+    <p>Ya que se acerca el 14... ¿te animarías a tomar un café o algo relajado ese día? ☕🐱<br>
+    Sin presión, solo una idea para charlar un rato y ver qué tal.</p>
 
-    <p>Du bist so besonders für mich... 💗</p>
-
-    <p><strong>Möchtest du mein Valentine sein? 🐾❤️</strong></p>
-
-    <!-- Imágenes estáticas (sube tus PNG) -->
-    <img class="animal-static" src="welpe-herz.png" alt="Süßer Welpe">
-    <img class="animal-static" src="katze-herz.png" alt="Niedliche Katze">
-    <img class="animal-static" src="vogel-herz.png" alt="Süßer Vogel">
+    <!-- Animalitos estáticos opcionales -->
+    <img src="welpe.png" alt="Süßer Welpe">
+    <img src="katze.png" alt="Niedliche Katze">
 
     <div class="buttons">
-      <button id="yesBtn">JA, NATÜRLICH! 😍💕</button>
-      <button id="noBtn">Nein... 😢</button>
-    </div>
-
-    <div class="carta" id="carta">
-      <h2>Ich wusste, du sagst Ja! 🫶🐶</h2>
-      <p>Liebe [ihr Name],</p>
-      <p>Du bist mein absoluter Liebling. Ich habe dich so lieb! 🌸<br>
-      Jeder Moment mit dir fühlt sich magisch an. Deine Art, deine Energie, einfach alles an dir macht mich glücklich.</p>
-      <p>Du bist perfekt, weil [hier etwas Persönliches: deine süße Stimme, wie du lachst, wie du mich verstehst...].</p>
-      <p>Dieser Valentinstag soll unser Anfang sein. Bereit für ein wunderschönes Date mit mir? 🔥❤️</p>
-      <p>Mit all meinem Herz,<br>[dein Name] 🐱💘</p>
+      <button id="yesBtn">Ja, klingt gut! 😄</button>
+      <button id="noBtn">Nein, danke 😅</button>
     </div>
   </div>
 
   <script>
     const yesBtn = document.getElementById('yesBtn');
     const noBtn = document.getElementById('noBtn');
-    const carta = document.getElementById('carta');
     const fallingContainer = document.getElementById('fallingContainer');
 
-    const noMessages = [
-      "Wirklich sicher? 😢",
-      "Überleg es dir nochmal... ich bin süß 😉",
-      "Mach mich nicht traurig... 🥺",
-      "Letzte Chance... 😏",
-      "Du wirst es bereuen 😈",
-      "Sag doch einfach Ja... 💕",
-      "Ich warte auf dich... ❤️"
-    ];
-    let count = 0;
-
-    noBtn.addEventListener('mouseover', () => {
-      const x = Math.random() * 80 + 10;
-      const y = Math.random() * 60 + 10;
-      noBtn.style.left = x + '%';
-      noBtn.style.top = y + '%';
-      noBtn.style.position = 'absolute';
-      noBtn.textContent = noMessages[count % noMessages.length];
-      count++;
-      yesBtn.style.transform = `scale(${1 + count * 0.15})`;
-    });
-
-    yesBtn.addEventListener('click', () => {
-      document.querySelector('h1').style.display = 'none';
-      document.querySelectorAll('p')[0].style.display = 'none';
-      document.querySelectorAll('p')[1].style.display = 'none';
-      document.querySelectorAll('p')[2].style.display = 'none';
-      document.querySelector('.buttons').style.display = 'none';
-      carta.style.display = 'block';
-
-      // Explosión extra al decir sí
-      for (let i = 0; i < 60; i++) {
-        setTimeout(createFalling, i * 40);
-      }
-    });
-
-    // Cascada de animalitos
-    const items = ['🐶', '🐱', '🐦', '❤️', '💗', '🐾', '😻', '🦋', '🐰', '🦊', '💕'];
+    const items = ['🐶', '🐱', '🐦', '❤️', '💕', '🐾', '😻'];
 
     function createFalling() {
       const item = document.createElement('div');
       item.classList.add('falling');
       item.textContent = items[Math.floor(Math.random() * items.length)];
-
       item.style.left = Math.random() * 100 + 'vw';
-      const duration = Math.random() * 8 + 7; // 7-15 segundos
+      const duration = Math.random() * 6 + 8;
       item.style.animationDuration = duration + 's';
-      item.style.animationDelay = Math.random() * 4 + 's';
-      item.style.fontSize = (Math.random() * 1.8 + 1.8) + 'em';
-
+      item.style.animationDelay = Math.random() * 3 + 's';
+      item.style.fontSize = (Math.random() * 1.5 + 1.8) + 'em';
       fallingContainer.appendChild(item);
-
-      setTimeout(() => item.remove(), (duration + 2) * 1000);
+      setTimeout(() => item.remove(), (duration + 1) * 1000);
     }
 
-    // Iniciar cascada continua
-    setInterval(createFalling, 350); // uno cada 0.35 segundos → buena cascada
+    setInterval(createFalling, 400);
+    for (let i = 0; i < 30; i++) createFalling();
 
-    // Arrancar con algunos al cargar
-    for (let i = 0; i < 40; i++) {
-      createFalling();
-    }
-  </script>
-</body>
-</html>
+    yesBtn.addEventListener('click', () => {
+      alert('Super! 😊 Te escribo para coordinar. ¿Cuándo te viene bien?');
+      // Opcional: window.location.href = 'https://wa.me/TUNUMERO?text=Hey%2C%20ja%20zu%20dem%20Kaffee!%20%F0%9F%98%84
