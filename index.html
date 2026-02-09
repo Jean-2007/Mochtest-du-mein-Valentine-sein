@@ -6,13 +6,6 @@
   <title>Hey Jona, Lust auf einen Kaffee? ☕🐶</title>
   <style>
     body {
-
-      body {
-  /* ... tus estilos actuales ... */
-  -webkit-text-size-adjust: 100%; /* evita que iOS haga zoom raro */
-  text-size-adjust: 100%;
-  word-wrap: break-word;
-}
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -22,65 +15,72 @@
       text-align: center;
       overflow: hidden;
       position: relative;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      word-wrap: break-word;
     }
-    .overlay { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1; }
-    .falling { position: absolute; font-size: 2.8em; animation: cascade 11s linear infinite; pointer-events:none; }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .falling {
+      position: absolute;
+      font-size: 2.8em;
+      animation: cascade 11s linear infinite;
+      pointer-events: none;
+    }
     @keyframes cascade {
-      0% { transform: translateY(-40vh) rotate(0deg); opacity:1; }
-      100% { transform: translateY(140vh) rotate(900deg); opacity:0; }
+      0% { transform: translateY(-40vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(140vh) rotate(900deg); opacity: 0; }
     }
-    .container { position: relative; z-index:10; padding: 60px 20px; max-width: 800px; margin:0 auto; }
-    h1 { font-size: 3.5em; color: #e91e63; margin: 40px 0 20px; }
-    p { font-size: 1.6em; line-height: 1.7; margin: 25px 0; }
-    .buttons { margin: 60px 0; }
-    button { padding: 20px 60px; font-size: 1.8em; border:none; border-radius:60px; cursor:pointer; margin:25px; box-shadow:0 8px 20px rgba(0,0,0,0.15); transition:all 0.3s; }
-    #yesBtn { background:#4caf50; color:white; }
-    #yesBtn:hover { transform:scale(1.1); }
-    #noBtn { background:#f44336; color:white; }
+    .container {
+      position: relative;
+      z-index: 10;
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 3.5em;
+      color: #e91e63;
+      margin: 40px 0 20px;
+    }
+    p {
+      font-size: 1.6em;
+      line-height: 1.7;
+      margin: 25px 0;
+    }
+    .buttons {
+      margin: 60px 0;
+    }
+    button {
+      padding: 20px 60px;
+      font-size: 1.8em;
+      border: none;
+      border-radius: 60px;
+      cursor: pointer;
+      margin: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s;
+    }
+    #yesBtn { background: #4caf50; color: white; }
+    #yesBtn:hover { transform: scale(1.1); }
+    #noBtn { background: #f44336; color: white; }
 
-    /* Mejoras para móvil */
-@media (max-width: 600px) {
-  body {
-    font-size: 16px; /* base más grande */
-  }
-  
-  h1 {
-    font-size: 2.4em !important; /* más grande que antes */
-    margin: 20px 0 15px;
-  }
-  
-  p {
-    font-size: 1.15em !important; /* 1.15em es cómodo para leer en móvil */
-    line-height: 1.6 !important;
-    margin: 18px 0 !important;
-    padding: 0 10px; /* un poquito de espacio lateral */
-  }
-  
-  .container {
-    padding: 30px 15px !important; /* menos padding arriba/abajo y lados */
-    max-width: 100% !important;
-    box-sizing: border-box;
-  }
-  
-  button {
-    padding: 15px 40px !important;
-    font-size: 1.3em !important;
-    margin: 15px 10px !important;
-    width: 80% !important; /* botones más anchos en móvil */
-    max-width: 320px;
-  }
-  
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px 0 !important;
-  }
-  
-  .falling {
-    font-size: 2em !important; /* animalitos un poco más chicos para no saturar */
-  }
-}
+    /* Responsive para móvil */
+    @media (max-width: 600px) {
+      h1 { font-size: 2.4em; margin: 20px 0 15px; }
+      p { font-size: 1.15em; line-height: 1.6; margin: 18px 0; padding: 0 10px; }
+      .container { padding: 30px 15px; max-width: 100%; box-sizing: border-box; }
+      button { padding: 15px 40px; font-size: 1.3em; margin: 15px 10px; width: 80%; max-width: 320px; }
+      .buttons { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
+      .falling { font-size: 2em; }
+    }
   </style>
 </head>
 <body>
@@ -89,28 +89,20 @@
 
   <div class="container">
     <h1>Hallo Jona! 😊</h1>
-    
-   <!-- Mensaje principal -->
-<!-- Mensaje principal -->
-<p>Es ist schon eine Weile her, seit wir das letzte Mal richtig geredet haben... 😅<br>
-Hey, mir ist gerade dein Lächeln wieder eingefallen... das hat mir damals schon immer gut gefallen 😅</p>
 
-<p>Da bald Valentinstag ist, dachte ich: Vielleicht hätten wir Lust, mal einen Kaffee zusammen zu trinken oder einfach entspannt spazieren zu gehen? ☕🐱<br>
-Ganz ohne Druck – einfach nur quatschen und sehen, was passiert.</p>
+    <p>Es ist schon eine Weile her, seit wir das letzte Mal richtig geredet haben... 😅</p>
 
-<!-- Bloque del texto del reel (trend "as friends") -->
-<div style="margin: 40px 0; padding: 25px; background: rgba(255, 182, 193, 0.3); border-radius: 20px; max-width: 600px; margin-left: auto; margin-right: auto; border: 2px dashed #ff69b4; text-align: center;">
-  <h3 style="color: #e91e63; font-size: 1.5em; margin-bottom: 15px;">So ein Reel hat mich zum Schmunzeln gebracht... 😏</h3>
-  <p style="font-size: 1.35em; line-height: 1.7; font-style: italic; white-space: pre-line;">
-Lass uns am 14. Februar abhängen (nur so zum Spaß) 😏  
-(einfach ein random Samstag halt),  
-mit passenden Outfits (natürlich nur as friends ofc 😂),  
-und Fotos zusammen machen (für die Memories obviously 🫶)
-  </p>
-  <p style="margin-top: 20px; font-size: 1.2em; color: #555;">
-    Was sagst du? Kaffee + Fotos + Outfits? Oder erstmal nur Kaffee ohne Dresscode? ☕😅
-  </p>
-</div>
+    <p>Hey, mir ist gerade dein Lächeln wieder eingefallen... das hat mir damals schon immer gut gefallen 😊</p>
+
+    <p>Da bald Valentinstag ist, dachte ich: Lass uns am 14. Februar abhängen (nur so zum Spaß) 😏<br>
+    (einfach ein random Samstag halt)<br>
+    Was sagst du? Kaffee oder ein entspannter Spaziergang? ☕🐱<br>
+    Ganz ohne Druck – einfach nur quatschen und sehen, was passiert.</p>
+
+    <div class="buttons">
+      <button id="yesBtn">Ja, klingt super! 😄</button>
+      <button id="noBtn">Nein, danke 😅</button>
+    </div>
   </div>
 
   <script>
@@ -125,7 +117,7 @@ und Fotos zusammen machen (für die Memories obviously 🫶)
       item.classList.add('falling');
       item.textContent = items[Math.floor(Math.random() * items.length)];
       item.style.left = Math.random() * 100 + 'vw';
-      const duration = Math.random() * 7 + 8; // 8-15s
+      const duration = Math.random() * 7 + 8;
       item.style.animationDuration = duration + 's';
       item.style.animationDelay = Math.random() * 4 + 's';
       item.style.fontSize = (Math.random() * 2 + 2) + 'em';
@@ -137,11 +129,14 @@ und Fotos zusammen machen (für die Memories obviously 🫶)
     setInterval(createFalling, 350);
     for (let i = 0; i < 35; i++) createFalling();
 
+    // Botón Sí
     yesBtn.addEventListener('click', () => {
       alert('Cool! 😊 Ich schreibe dir gleich, um was auszumachen. Wann passt es dir?');
-      // Opcional: abre WhatsApp → window.location.href = 'https://wa.me/TUNUMERO?text=Hey%2C%20ja%20zum%20Kaffee!%20%F0%9F%98%84';
+      // Si quieres abrir WhatsApp directamente (cambia TUNUMERO):
+      // window.location.href = 'https://wa.me/TUNUMERO?text=Hey%20Jona!%20%F0%9F%98%84%20Ja%20zum%20Kaffee%20am%2014.?%20Wann%20passt%20es%20dir?';
     });
 
+    // Botón No
     noBtn.addEventListener('click', () => {
       alert('Kein Ding 😅 Viel Spaß am Valentinstag trotzdem!');
     });
