@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hey Sü, Lust auf einen Kaffee? ☕🐶</title>
+  <title>Hey Jona, Lust auf einen Kaffee? ☕🐶</title>
   <style>
     body {
       margin: 0;
@@ -55,30 +55,12 @@
       line-height: 1.7;
       margin: 25px 0;
     }
-    .buttons {
-      margin: 60px 0;
-    }
-    button {
-      padding: 20px 60px;
-      font-size: 1.8em;
-      border: none;
-      border-radius: 60px;
-      cursor: pointer;
-      margin: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: all 0.3s;
-    }
-    #yesBtn { background: #4caf50; color: white; }
-    #yesBtn:hover { transform: scale(1.1); }
-    #noBtn { background: #f44336; color: white; }
 
     /* Responsive para móvil */
     @media (max-width: 600px) {
       h1 { font-size: 2.4em; margin: 20px 0 15px; }
       p { font-size: 1.15em; line-height: 1.6; margin: 18px 0; padding: 0 10px; }
       .container { padding: 30px 15px; max-width: 100%; box-sizing: border-box; }
-      button { padding: 15px 40px; font-size: 1.3em; margin: 15px 10px; width: 80%; max-width: 320px; }
-      .buttons { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
       .falling { font-size: 2em; }
     }
   </style>
@@ -88,27 +70,21 @@
   <div class="overlay" id="fallingContainer"></div>
 
   <div class="container">
-    <p>Hallo Jona! 😊</p>
+    <h1>Hallo Jona! 😊</h1>
 
-<p>Die Abschlussfeier vom Kurs kommt mir vor, als wäre sie gestern gewesen jajajaja… (yaya, sind schon 7 Monate vergangen 😅).<br>
-Bis zum Schluss hab ich dir nie gesagt, dass mir deine Lächeln immer so gefallen hat – du hast immer so fröhlich und positiv gewirkt, und ehrlich gesagt fand ich dich richtig schön (deine Lächeln natürlich jeje 😄).</p>
+    <p>Die Abschlussfeier vom Kurs kommt mir vor, als wäre sie gestern gewesen jajajaja… (yaya, sind schon 7 Monate vergangen 😅).<br>
+    Bis zum Schluss hab ich dir nie gesagt, dass mir deine Lächeln immer so gefallen hat – du hast immer so fröhlich und positiv gewirkt, und ehrlich gesagt fand ich dich richtig schön (deine Lächeln natürlich jeje 😄).</p>
 
-<p>Und jetzt ist schon fast der 14. Februar, und ich weiß, dass es komisch wäre, wenn ich dich direkt frage, ob ich dein Valentinstag-Date sein darf…</p>
+    <p>Und jetzt ist schon fast der 14. Februar, und ich weiß, dass es komisch wäre, wenn ich dich direkt frage, ob ich dein Valentinstag-Date sein darf…</p>
 
-<p>Aber na ja, ich muss irgendwas sagen: Würdest du Lust haben, dass wir beide am 14. ausgehen? (ist zufällig ein Samstag)<br>
-Wir könnten in eine gemütliche Cafetería gehen (weil draußen gerade arschkalt ist 🥶), was Warmes trinken, entspannt quatschen, uns besser kennenlernen und ein paar Fotos zusammen machen (für die Memories obviously 😌, as friends ofc 😅).<br>
-Und wenn du magst… bring ich dir ein kleines Detail mit, nichts Heavy.</p>
+    <p>Aber na ja, ich muss irgendwas sagen: Würdest du Lust haben, dass wir beide am 14. ausgehen? (ist zufällig ein Samstag)<br>
+    Wir könnten in eine gemütliche Cafetería gehen (weil draußen gerade arschkalt ist 🥶), was Warmes trinken, entspannt quatschen, uns besser kennenlernen und ein paar Fotos zusammen machen (für die Memories obviously 😏, as friends ofc 😅).<br>
+    Und wenn du magst… bring ich dir ein kleines Detail mit, nichts Heavy.</p>
 
-<p>Was sagst du? Gefällt dir die Idee??? (und ich würde es total verstehen, wenn du Nein sagst 😊)</p>
-    <div class="buttons">
-      <button id="yesBtn">Ja, klingt super! 😄</button>
-      <button id="noBtn">Nein, danke 😅</button>
-    </div>
+    <p>Was sagst du? Gefällt dir die Idee??? (und ich würde es total verstehen, wenn du Nein sagst 😊)</p>
   </div>
 
   <script>
-    const yesBtn = document.getElementById('yesBtn');
-    const noBtn = document.getElementById('noBtn');
     const fallingContainer = document.getElementById('fallingContainer');
 
     const items = ['🐶', '🐱', '🐦', '❤️', '💕', '🐾', '😻', '🦋', '🐰'];
@@ -129,18 +105,6 @@ Und wenn du magst… bring ich dir ein kleines Detail mit, nichts Heavy.</p>
     // Cascada continua
     setInterval(createFalling, 350);
     for (let i = 0; i < 35; i++) createFalling();
-
-    // Botón Sí
-    yesBtn.addEventListener('click', () => {
-      alert('Cool! 😊 Ich schreibe dir gleich, um was auszumachen. Wann passt es dir?');
-      // Si quieres abrir WhatsApp directamente (cambia TUNUMERO):
-      // window.location.href = 'https://wa.me/TUNUMERO?text=Hey%20Jona!%20%F0%9F%98%84%20Ja%20zum%20Kaffee%20am%2014.?%20Wann%20passt%20es%20dir?';
-    });
-
-    // Botón No
-    noBtn.addEventListener('click', () => {
-      alert('Kein Ding 😅 Viel Spaß am Valentinstag trotzdem!');
-    });
   </script>
 </body>
 </html>
