@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hey Jona, Lust auf einen Kaffee? ☕🐶</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       padding: 0;
@@ -13,55 +16,56 @@
       color: #333;
       min-height: 100vh;
       text-align: center;
-      overflow: hidden;
-      position: relative;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-      word-wrap: break-word;
+      line-height: 1.6;
     }
     .overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       pointer-events: none;
       z-index: 1;
+      overflow: hidden;
     }
     .falling {
       position: absolute;
-      font-size: 2.8em;
-      animation: cascade 11s linear infinite;
+      animation: cascade 12s linear infinite;
       pointer-events: none;
     }
     @keyframes cascade {
-      0% { transform: translateY(-40vh) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(140vh) rotate(900deg); opacity: 0; }
+      0% { transform: translateY(-20vh) rotate(0deg); opacity: 0.9; }
+      100% { transform: translateY(120vh) rotate(720deg); opacity: 0; }
     }
     .container {
       position: relative;
       z-index: 10;
-      padding: 60px 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
     }
     h1 {
-      font-size: 3.5em;
+      font-size: clamp(2.5rem, 8vw, 3.8rem);
       color: #e91e63;
-      margin: 40px 0 20px;
+      margin: 2rem 0 1.5rem;
     }
     p {
-      font-size: 1.6em;
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
       line-height: 1.7;
-      margin: 25px 0;
+      margin: 1.5rem 0;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* Responsive para móvil */
-    @media (max-width: 600px) {
-      h1 { font-size: 2.4em; margin: 20px 0 15px; }
-      p { font-size: 1.15em; line-height: 1.6; margin: 18px 0; padding: 0 10px; }
-      .container { padding: 30px 15px; max-width: 100%; box-sizing: border-box; }
-      .falling { font-size: 2em; }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container { padding: 3rem 1rem 5rem; }
+      h1 { margin: 1.5rem 0 1rem; }
+      p { margin: 1.2rem 0; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+      p { font-size: clamp(1rem, 5vw, 1.25rem); }
+      .container { padding: 2.5rem 1rem 4rem; }
     }
   </style>
 </head>
@@ -72,8 +76,9 @@
   <div class="container">
     <h1>Hallo Jona! 😊</h1>
 
-    <p>Die Abschlussfeier vom Kurs kommt mir vor, als wäre sie gestern gewesen jajajaja… (yaya, sind schon 7 Monate vergangen 😅).<br>
-    Bis zum Schluss hab ich dir nie gesagt, dass mir deine Lächeln immer so gefallen hat – du hast immer so fröhlich und positiv gewirkt, und ehrlich gesagt fand ich dich richtig schön (deine Lächeln natürlich jeje 😄).</p>
+    <p>Die Abschlussfeier vom Kurs kommt mir vor, als wäre sie gestern gewesen jajajaja… (yaya, sind schon 7 Monate vergangen 😅).</p>
+
+    <p>Bis zum Schluss hab ich dir nie gesagt, dass mir deine Lächeln immer so gefallen hat – du hast immer so fröhlich und positiv gewirkt, und ehrlich gesagt fand ich dich richtig schön (deine Lächeln natürlich jeje 😄).</p>
 
     <p>Und jetzt ist schon fast der 14. Februar, und ich weiß, dass es komisch wäre, wenn ich dich direkt frage, ob ich dein Valentinstag-Date sein darf…</p>
 
@@ -86,7 +91,6 @@
 
   <script>
     const fallingContainer = document.getElementById('fallingContainer');
-
     const items = ['🐶', '🐱', '🐦', '❤️', '💕', '🐾', '😻', '🦋', '🐰'];
 
     function createFalling() {
@@ -94,17 +98,17 @@
       item.classList.add('falling');
       item.textContent = items[Math.floor(Math.random() * items.length)];
       item.style.left = Math.random() * 100 + 'vw';
-      const duration = Math.random() * 7 + 8;
+      const duration = Math.random() * 8 + 10; // más lento para menos saturación
       item.style.animationDuration = duration + 's';
-      item.style.animationDelay = Math.random() * 4 + 's';
-      item.style.fontSize = (Math.random() * 2 + 2) + 'em';
+      item.style.animationDelay = Math.random() * 5 + 's';
+      item.style.fontSize = (Math.random() * 1.5 + 1.8) + 'em';
       fallingContainer.appendChild(item);
-      setTimeout(() => item.remove(), (duration + 2) * 1000);
+      setTimeout(() => item.remove(), (duration + 3) * 1000);
     }
 
-    // Cascada continua
-    setInterval(createFalling, 350);
-    for (let i = 0; i < 35; i++) createFalling();
+    // Menos densidad para que no lagee en móvil
+    setInterval(createFalling, 600); // uno cada 0.6s
+    for (let i = 0; i < 20; i++) createFalling(); // menos iniciales
   </script>
 </body>
 </html>
